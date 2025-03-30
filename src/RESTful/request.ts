@@ -2,14 +2,13 @@ import axios from 'axios';
 import ora from 'ora';
 import chalk from 'chalk';
 import { formatResponse } from './output';
+import { parseHeaders } from '../utility';
 
-export async function sendRequest(
-  method: string,
-  url: string,
-  data?: string,
-  headers?: Record<string, string>,
-) {
+export async function sendRequest(method: string, url: string, option: any) {
   const spinner = ora(`Sending a ${method} request...`).start();
+
+  const { data, Header } = option;
+  const headers = parseHeaders(Header || []);
 
   try {
     const response = await axios({
