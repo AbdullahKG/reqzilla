@@ -1,0 +1,38 @@
+{
+  "name": "reqzilla",
+  "version": "1.0.0",
+  "description": "a lightweight and powerful CLI tool for testing REST APIs directly from the terminal",
+  "homepage": "https://github.com/AbdullahKG/reqzilla#readme",
+  "bugs": {
+    "url": "https://github.com/AbdullahKG/reqzilla/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AbdullahKG/reqzilla.git"
+  },
+  "license": "ISC",
+  "author": "Abdullah Omar",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc"
+  },
+  "dependencies": {
+    "axios": "^1.8.4",
+    "chalk": "^5.4.1",
+    "commander": "^13.1.0",
+    "figlet": "^1.8.0",
+    "ora": "^8.2.0"
+  },
+  "devDependencies": {
+    "@types/chalk": "^0.4.31",
+    "@types/commander": "^2.12.0",
+    "@types/figlet": "^1.7.0",
+    "@types/node": "^22.13.14",
+    "@types/ora": "^3.1.0",
+    "typescript": "^5.8.2"
+  },
+  "bin": {
+    "reqzilla": "./dist/index.js"
+  }
+}
