@@ -2,7 +2,6 @@ import { Command } from 'commander';
 import chalk from 'chalk';
 import figlet from 'figlet';
 import { sendRequest } from './RESTful/request';
-import { parseHeaders } from './utility';
 
 const program = new Command();
 
