@@ -15,42 +15,35 @@ program
   .description('lightweight and powerful CLI tool for testing REST APIs')
   .version('1.0.0');
 
+// Common action to handle request sending
+const handleRequest = (method: string) => (url: string, option: any) => {
+  sendRequest(method, url, option);
+};
+
 program
   .command('get <url>')
   .description('Send a GET request')
   .option('-H, --Header <header...>', 'Request headers')
-  .action((url, option) => {
-    const headers = parseHeaders(option.Header || []);
-    sendRequest('GET', url, undefined, headers);
-  });
+  .action(handleRequest('GET'));
 
 program
   .command('post <url>')
   .description('Send a POST request')
   .option('-d, --data <data>', 'Request body as JSON string')
   .option('-H, --Header <header...>', 'Request headers')
-  .action((url, option) => {
-    const headers = parseHeaders(option.Header || []);
-    sendRequest('POST', url, option.data, headers);
-  });
+  .action(handleRequest('POST'));
 
 program
   .command('patch <url>')
   .description('Send a PATCH request')
   .option('-d, --data <data>', 'Request body as JSON string')
   .option('-H, --Header <header...>', 'Request headers')
-  .action((url, option) => {
-    const headers = parseHeaders(option.Header || []);
-    sendRequest('PATCH', url, option.data, headers);
-  });
+  .action(handleRequest('PATCH'));
 
 program
   .command('delete <url>')
   .description('Send a DELETE request')
   .option('-H, --Header <header...>', 'Request headers')
-  .action((url, option) => {
-    const headers = parseHeaders(option.Header || []);
-    sendRequest('DELETE', url, undefined, headers);
-  });
+  .action(handleRequest('DELETE'));
 
 program.parse(process.argv);
