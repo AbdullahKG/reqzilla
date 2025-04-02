@@ -23,6 +23,10 @@ program
   .command('get <url>')
   .description('Send a GET request')
   .option('-H, --Header <header...>', 'Request headers')
+  .option(
+    '-o, --outputFile <FileName>',
+    'Save Response to File with custome File name',
+  )
   .action(handleRequest('GET'));
 
 program
@@ -30,6 +34,10 @@ program
   .description('Send a POST request')
   .option('-d, --data <data>', 'Request body as JSON string')
   .option('-H, --Header <header...>', 'Request headers')
+  .option(
+    '-o, --outputFile <FileName>',
+    'Save Response to File with custome File name',
+  )
   .action(handleRequest('POST'));
 
 program
@@ -37,12 +45,20 @@ program
   .description('Send a PATCH request')
   .option('-d, --data <data>', 'Request body as JSON string')
   .option('-H, --Header <header...>', 'Request headers')
+  .option(
+    '-o, --outputFile <FileName>',
+    'Save Response to File with custome File name',
+  )
   .action(handleRequest('PATCH'));
 
 program
   .command('delete <url>')
   .description('Send a DELETE request')
   .option('-H, --Header <header...>', 'Request headers')
+  .option(
+    '-o, --outputFile <FileName>',
+    'Save Response to File with custome File name',
+  )
   .action(handleRequest('DELETE'));
 
 program.parse(process.argv);
