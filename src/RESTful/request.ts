@@ -2,12 +2,12 @@ import axios from 'axios';
 import ora from 'ora';
 import chalk from 'chalk';
 import { formatResponse } from './output';
-import { parseHeaders } from '../utility';
+import { parseHeaders, saveResponseToFile } from '../utility';
 
 export async function sendRequest(method: string, url: string, option: any) {
   const spinner = ora(`Sending a ${method} request...`).start();
 
-  const { data, Header } = option;
+  const { data, Header, outputFile } = option;
   const headers = parseHeaders(Header || []);
 
   try {
@@ -20,6 +20,9 @@ export async function sendRequest(method: string, url: string, option: any) {
 
     spinner.succeed(chalk.green('Request succeeded!'));
     formatResponse(response);
+    if (outputFile) {
+      saveResponseToFile(response, outputFile);
+    }
   } catch (err: any) {
     spinner.fail(chalk.red('Request failed!'));
 
