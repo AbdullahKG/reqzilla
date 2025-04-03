@@ -122,6 +122,12 @@ reqzilla get https://jsonplaceholder.typicode.com/posts/1 -o response.json
 reqzilla get https://jsonplaceholder.typicode.com/posts/1 -v
 ```
 
+### Example with Only Headers
+
+```sh
+reqzilla get https://jsonplaceholder.typicode.com/posts/1 -I
+```
+
 ## Contributing
 
 Contributions are welcome! Feel free to open an issue or submit a pull request on GitHub:
