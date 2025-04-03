@@ -27,6 +27,8 @@ program
     '-o, --outputFile <FileName>',
     'Save Response to File with custome File name',
   )
+  .option('-v, --verbose', 'Show verbose info about the response')
+  .option('-I, --onlyHeaders', 'Show response Headers only')
   .action(handleRequest('GET'));
 
 program
@@ -38,6 +40,8 @@ program
     '-o, --outputFile <FileName>',
     'Save Response to File with custome File name',
   )
+  .option('-v, --verbose', 'Show verbose info about the response')
+  .option('-I, --onlyHeaders', 'Show response Headers only')
   .action(handleRequest('POST'));
 
 program
@@ -49,6 +53,8 @@ program
     '-o, --outputFile <FileName>',
     'Save Response to File with custome File name',
   )
+  .option('-v, --verbose', 'Show verbose info about the response')
+  .option('-I, --onlyHeaders', 'Show response Headers only')
   .action(handleRequest('PATCH'));
 
 program
@@ -59,6 +65,8 @@ program
     '-o, --outputFile <FileName>',
     'Save Response to File with custome File name',
   )
+  .option('-v, --verbose', 'Show verbose info about the response')
+  .option('-I, --onlyHeaders', 'Show response Headers only')
   .action(handleRequest('DELETE'));
 
 program.parse(process.argv);
