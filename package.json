@@ -10,7 +10,7 @@
     "type": "git",
     "url": "git+https://github.com/AbdullahKG/reqzilla.git"
   },
-  "license": "ISC",
+  "license": "MIT",
   "author": "Abdullah Omar",
   "type": "module",
   "main": "index.js",
@@ -39,5 +39,16 @@
   },
   "engines": {
     "node": ">=14.0.0"
-  }
+  },
+  "keywords": [
+    "typescript",
+    "cli",
+    "rest-api",
+    "api-testing",
+    "command-line",
+    "http",
+    "api-tester",
+    "testing-tool",
+    "developer-tools"
+  ]
 }
