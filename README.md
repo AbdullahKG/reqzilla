@@ -12,7 +12,6 @@
 
 ## ReqZilla
 
-![ReqZilla Logo](https://github.com/AbdullahKG/reqzilla/raw/main/assets/logo.png)  
 A lightweight and powerful CLI tool for testing REST APIs directly from the terminal.
 
 ---
