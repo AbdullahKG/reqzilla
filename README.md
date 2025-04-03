@@ -26,6 +26,7 @@ A lightweight and powerful CLI tool for testing REST APIs directly from the term
 - Displays detailed response information in verbose mode.
 - Displays only headers if required.
 - Supports setting request headers, including Authorization headers (e.g., Bearer tokens for JWT).
+- Follows url redirects automatically
 
 ---
 
