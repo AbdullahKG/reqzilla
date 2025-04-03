@@ -1,13 +1,13 @@
 import axios from 'axios';
 import ora from 'ora';
 import chalk from 'chalk';
-import { formatResponse } from './output';
+import { formatResponse, verboseOutput, displayOnlyHeaders } from './output';
 import { parseHeaders, saveResponseToFile } from '../utility';
 
 export async function sendRequest(method: string, url: string, option: any) {
   const spinner = ora(`Sending a ${method} request...`).start();
 
-  const { data, Header, outputFile } = option;
+  const { data, Header, outputFile, verbose, onlyHeaders } = option;
   const headers = parseHeaders(Header || []);
 
   try {
@@ -19,7 +19,15 @@ export async function sendRequest(method: string, url: string, option: any) {
     });
 
     spinner.succeed(chalk.green('Request succeeded!'));
-    formatResponse(response);
+
+    if (verbose) {
+      verboseOutput(response);
+    } else if (onlyHeaders) {
+      displayOnlyHeaders(response);
+    } else {
+      formatResponse(response);
+    }
+
     if (outputFile) {
       saveResponseToFile(response, outputFile);
     }
