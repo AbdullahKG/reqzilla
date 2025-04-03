@@ -31,6 +31,12 @@ A lightweight and powerful CLI tool for testing REST APIs directly from the term
 
 ## Installation
 
+ReqZilla requires Node.js 14 or later. You can check your version by running:
+
+```sh
+npm -v
+```
+
 To install ReqZilla globally using npm, run:
 
 ```sh
