@@ -49,6 +49,14 @@ npm install -g reqzilla
 
 After installation, you can use `reqzilla` directly from your terminal.
 
+You can get help:
+
+```sh
+reqzilla --help
+```
+
+also you can get help on every existing command or option
+
 ### Sending Requests
 
 #### GET Request
