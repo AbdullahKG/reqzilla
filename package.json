@@ -1,6 +1,6 @@
 {
   "name": "reqzilla",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "a lightweight and powerful CLI tool for testing REST APIs directly from the terminal",
   "homepage": "https://github.com/AbdullahKG/reqzilla#readme",
   "bugs": {
